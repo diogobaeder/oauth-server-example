@@ -1,0 +1,20 @@
+{
+    "name": "diogobaeder/oauth-server-example",
+    "description": "Example of Authorization Server for my friend Brad",
+    "type": "project",
+    "require": {
+        "league/oauth2-server": "^8.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Diogobaeder\\OauthServerExample\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Diogo Baeder de Paula Pinto",
+            "email": "diogobaeder@yahoo.com.br"
+        }
+    ]
+}
