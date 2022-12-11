@@ -16,27 +16,21 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
 use \Defuse\Crypto\Key;
 
-$clientRepository = new ClientRepository();
-$scopeRepository = new ScopeRepository();
-$accessTokenRepository = new AccessTokenRepository();
-$authCodeRepository = new AuthCodeRepository();
-$refreshTokenRepository = new RefreshTokenRepository();
-
 // The keys below were created only for this example project, DO NOT USE IN PRODUCTION!
 $privateKey = 'file://' . __DIR__ . '/../src/private.key';
 $encryptionKey = 'def00000037bbc6e50d2cf28a0bafa9cbf69343f2ead7886d45a07ef913f26d26326405fda9026bf23ff097691643f3c9eaaf3ef63b21f51c756dd7d7e2b8e400fda3fda';
 
 $server = new AuthorizationServer(
-    $clientRepository,
-    $accessTokenRepository,
-    $scopeRepository,
+    new ClientRepository(),
+    new AccessTokenRepository(),
+    new ScopeRepository(),
     $privateKey,
     Key::loadFromAsciiSafeString($encryptionKey)
 );
 
 $grant = new AuthCodeGrant(
-    $authCodeRepository,
-    $refreshTokenRepository,
+    new AuthCodeRepository(),
+    new RefreshTokenRepository(),
     new \DateInterval('PT10M')
 );
 
