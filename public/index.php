@@ -95,5 +95,15 @@ $app->post('/access_token', function (Request $request, Response $response) use 
     }
 });
 
+$app->get('/resource-owner', function (Request $request, Response $response) use ($server, $logger) {
+    $data = array(
+        'ok' => true,
+        'foo' => 'bar'
+    );
+    $body = $response->getBody();
+    $body->write(json_encode($data));
+    return $response->withHeader('Content-Type', 'application/json')->withBody($body);
+});
+
 
 $app->run();
