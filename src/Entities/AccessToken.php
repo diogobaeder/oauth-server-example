@@ -13,6 +13,10 @@ class AccessToken implements AccessTokenEntityInterface
 
     private string $identifier;
 
+    public function __construct() {
+        $this->client = new Client();
+    }
+
     public function getIdentifier(): string
     {
         return $this->identifier;

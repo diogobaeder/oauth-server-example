@@ -15,8 +15,8 @@ class ScopeRepository implements ScopeRepositoryInterface
         return new Scope();
     }
 
-    public function finalizeScopes(array $scopes, $grantType, ClientEntityInterface $clientEntity, $userIdentifier = null)
+    public function finalizeScopes(array $scopes, $grantType, ClientEntityInterface $clientEntity, $userIdentifier = null): array
     {
-        // Let's pretend there's nothing to do with the scopes, they're all fine.
+        return $scopes;
     }
 }

@@ -15,7 +15,8 @@ class Client implements ClientEntityInterface
     function __construct()
     {
         $this->name = "Some name";
-        $this->redirectUri = "https://some.uri.example.com";
+        $this->redirectUri = "http://127.0.0.1:5000/authorize";
+        $this->isConfidential = true;
     }
 
     public function getIdentifier(): string
