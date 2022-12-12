@@ -23,7 +23,7 @@ use \Defuse\Crypto\Key;
 $privateKey = 'file://' . __DIR__ . '/../src/private.key';
 $encryptionKey = 'def00000037bbc6e50d2cf28a0bafa9cbf69343f2ead7886d45a07ef913f26d26326405fda9026bf23ff097691643f3c9eaaf3ef63b21f51c756dd7d7e2b8e400fda3fda';
 
-$logger = new Logger('name');
+$logger = new Logger('example');
 $handler = new StreamHandler(__DIR__ . '/../output.log');
 $lineFormatter = new LineFormatter;
 $lineFormatter-> includeStacktraces();
